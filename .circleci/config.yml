@@ -26,6 +26,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       - run: |
           if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
             echo "It worked";
+            exit 1
           else 
             echo "Nope!"; exit 1
           fi
