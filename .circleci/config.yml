@@ -11,10 +11,10 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       - run: echo "Trying out workspaces" > my_workspace/echo-output
       - persist_to_workspace: 
       
-        root: my_workspace
+          root: my_workspace
         
-        paths: 
-          - echo-output
+          paths: 
+            - echo-output
   stuff: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: circleci/ruby:2.4.1
