@@ -17,7 +17,7 @@ jobs:
           command: |  # use pipenv to install dependencies
             sudo pip install pipenv
             sudo pip install tweepy
-            sudo python3 PyTweeting.py
+           # sudo python3 PyTweeting.py
 
 
  # stuff: # This is our second job.
