@@ -14,6 +14,6 @@ auth = tweepy.OAuthHandler('DJ3yOjQhddvAMkhDffs85kmfR','yIw8OWpdoAOL167xpRBgpRtk
 
 auth.set_access_token('1166597179135471621-CtRH6kHoxYecyKlI0xOI7PeGV9lHAR','XaCGjngj88Ed6AZEnYh22mZLrFGCAI1RSaBV6XftO3rQG')
 
-api = tweepy.API(auth, proxy='https://webproxy.bs.ptb.de:8080')
+api = tweepy.API(auth) #, proxy='https://webproxy.bs.ptb.de:8080')
 
 api.update_status(generate_random_string())
