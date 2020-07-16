@@ -2,7 +2,7 @@ version: 2
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
     docker: # it uses the docker executor
-      - image: circleci/python:3.7 # specifically, a docker image with python 3.7
+      - image: circleci/python:3.7.1 # specifically, a docker image with python 3.7
       - environment: 
           PIPENV_VENV_IN_PROJECT: true
      # Steps are a list of commands to run inside the docker container above.
