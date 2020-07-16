@@ -11,6 +11,13 @@ jobs:
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: circle_test
+    steps:
+      - checkout  # checkout source code to working directory
+      - run:
+          command: |  # use pipenv to install dependencies
+            sudo pip install pipenv
+            pipenv install
+
 
  # stuff: # This is our second job.
  #   docker: # it runs inside a docker image, the same as above.
