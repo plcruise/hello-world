@@ -3,7 +3,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
     working_directory: ~/circleci-python
     docker: # it uses the docker executor
-      - image: circleci/python:3.6.4 # specifically, a docker image with python 3.6.4
+      - image: circleci/python:3.7.4 # specifically, a docker image with python 3.6.4
       - environment: 
           PIPENV_VENV_IN_PROJECT: true
      # Steps are a list of commands to run inside the docker container above.
@@ -38,11 +38,11 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
             echo "Nope!"; exit 1
           fi
  # Under the workflows: map, we can coordinate our two jobs, defined above.
-workflows:
-  version: 2
-  one_and_two: # this is the name of our workflow
-    jobs: # and here we list the jobs we are going to run.
-      - one
-      - stuff:
-          requires:
-            - one
+#workflows:
+#  version: 2
+#  one_and_two: # this is the name of our workflow
+#    jobs: # and here we list the jobs we are going to run.
+#      - one
+#      - stuff:
+#          requires:
+#            - one
