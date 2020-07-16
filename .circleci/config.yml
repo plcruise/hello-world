@@ -22,21 +22,21 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
         
           paths: 
             - echo-output
-  stuff: # This is our second job.
-    docker: # it runs inside a docker image, the same as above.
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: echo "A more familiar hi" # We run a similar echo command to above.
-      - attach_workspace:
-          at: my_workspace
-      - run: |
-          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
-            echo "It worked";
-            exit 1
-          else 
-            echo "Nope!"; exit 1
-          fi
+ # stuff: # This is our second job.
+ #   docker: # it runs inside a docker image, the same as above.
+ #     - image: circleci/ruby:2.4.1
+ #   steps:
+ #     - checkout
+ #     - run: echo "A more familiar hi" # We run a similar echo command to above.
+ #     - attach_workspace:
+ #         at: my_workspace
+ #     - run: |
+ #         if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+ #           echo "It worked";
+ #           exit 1
+ #         else 
+ #           echo "Nope!"; exit 1
+ #         fi
  # Under the workflows: map, we can coordinate our two jobs, defined above.
 #workflows:
 #  version: 2
