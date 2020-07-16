@@ -2,10 +2,16 @@ version: 2
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
     docker: # it uses the docker executor
-      - image: circleci/ruby:2.4.1 # specifically, a docker image with ruby 2.4.1
+      - image: circleci/python:3.7 # specifically, a docker image with python 3.7
+      - environment: 
+          PIPENV_VENV_IN_PROJECT: true
      # Steps are a list of commands to run inside the docker container above.
     steps:
       - checkout # this pulls pulls code down from GitHub
+      - run:
+          command: |
+            sudo pip install pipenv
+            pipenv install
       - run: echo "A first hello" # This prints "A first hello" to stdout.
       - run: mkdir -p my_workspace
       - run: echo "Trying out workspaces" > my_workspace/echo-output
