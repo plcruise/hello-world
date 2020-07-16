@@ -16,7 +16,7 @@ jobs:
       - run:
           command: |  # use pipenv to install dependencies
             sudo pip install pipenv
-            pipenv install
+            sudo pip install tweepy
 
 
  # stuff: # This is our second job.
